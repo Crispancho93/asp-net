@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta charset="iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--iconos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>@ViewBag.Title - BIOWEB</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!--jquery-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <!--bootstrap-->
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!--bootbox-->
+    @Scripts.Render("~/bundles/bootbox_min")
+    @Scripts.Render("~/bundles/bootbox_locales")
+
+    <!--mensaje comun-->
+    @Scripts.Render("~/bundles/custom/mensaje")
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-expand-md bg-dark navbar-dark">
+
+        <!--Logo-->
+        <a class="navbar-brand" href="home.jsp">
+            <img src="~/Content/imagenes/biologo.png" style="width:100px;">
+        </a>
+
+        <!-- Links menu -->
+        <ul class="navbar-nav">
+
+
+            <!-- Entrada -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    ENTRADA
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="entrada.jsp">NUEVA ENTRADA</a>
+                    <a class="dropdown-item" href="buscarEntrada.jsp">BUSCAR ENTRADA</a>
+                    <a class="dropdown-item" href="buscarEntradaAvanzada.jsp">B�SQUEDA AVANZADA</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="buscarInforEntrada.jsp">INFORMES</a>
+                </div>
+            </li>
+
+            <!--Salida -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    SALIDA
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="salida.jsp">NUEVA SALIDA</a>
+                    <a class="dropdown-item" href="buscarSalida.jsp">BUSCAR SALIDA</a>
+                    <a class="dropdown-item" href="buscarSalidaAvanzada.jsp">B�SQUEDA AVANZADA</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="buscarInforSalida.jsp">INFORMES</a>
+                </div>
+            </li>
+
+            <!-- Productos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    PRODUCTOS
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="ingresoProducto.jsp">INGRESO PRODUCTO</a>
+                    <a class="dropdown-item" href="buscarProducto.jsp">BUSCAR</a>
+
+                </div>
+            </li>
+
+            <!-- Proveedores -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    PROVEEDORES
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="ingresoProveedor.jsp">INGRESO PROVEEDOR</a>
+                    <a class="dropdown-item" href="buscarProveedor.jsp">BUSCAR</a>
+                </div>
+            </li>
+
+            <!--Clientes-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    CLIENTES
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="ingresoCliente.jsp">INGRESO CLIENTE</a>
+                    <a class="dropdown-item" href="buscarCliente.jsp">BUSCAR</a>
+                </div>
+            </li>
+
+            <!--Empleados-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    EMPLEADOS
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Empleado/Agregar">INGRESO EMPLEADO</a>
+                    <a class="dropdown-item" href="/Empleado/listar">BUSCAR</a>
+                </div>
+            </li>
+
+            <!--Ajustes-->
+            <li class="nav-item dropdown" id="ajustes">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    AJUSTES <i class="fas fa-cogs"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" id="usuariosSistema" href="/Usuario/Listar">USUARIOS SISTEMA</a>
+                    <a class="dropdown-item" id="crearUsuariosSistema" href="/Usuario/Agregar">CREAR USUARIO</a>
+                </div>
+            </li>
+
+            <!--Bienvenido-->
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+
+                </a>
+            </li>
+
+            <!--Cerrar sesi�n-->
+            <li class="nav-item">
+                <a class="nav-link">SALIR <i class="fas fa-sign-out-alt"></i></a>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="container-fluid body-content">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bioweb", "bioweb\bioweb.csproj", "{FFB1F6AF-78DD-4C91-A376-35634817DD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crud", "crud\crud.csproj", "{950688DA-2503-453F-ABE7-7DC501E76B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mysql", "mysql\mysql.csproj", "{3CC6B67D-62A5-4A7D-B3C5-0DA2BCF19910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biowebCore", "biowebCore\biowebCore.csproj", "{8065A111-B280-42E8-A60B-6CBE7C6FF438}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFB1F6AF-78DD-4C91-A376-35634817DD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB1F6AF-78DD-4C91-A376-35634817DD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB1F6AF-78DD-4C91-A376-35634817DD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB1F6AF-78DD-4C91-A376-35634817DD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950688DA-2503-453F-ABE7-7DC501E76B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950688DA-2503-453F-ABE7-7DC501E76B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950688DA-2503-453F-ABE7-7DC501E76B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950688DA-2503-453F-ABE7-7DC501E76B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC6B67D-62A5-4A7D-B3C5-0DA2BCF19910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC6B67D-62A5-4A7D-B3C5-0DA2BCF19910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC6B67D-62A5-4A7D-B3C5-0DA2BCF19910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC6B67D-62A5-4A7D-B3C5-0DA2BCF19910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8065A111-B280-42E8-A60B-6CBE7C6FF438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8065A111-B280-42E8-A60B-6CBE7C6FF438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8065A111-B280-42E8-A60B-6CBE7C6FF438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8065A111-B280-42E8-A60B-6CBE7C6FF438}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD6AF05F-A078-4F40-A35B-92E062C81A4E}
+	EndGlobalSection
+EndGlobal

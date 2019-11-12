@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="biowebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="entrada">
+    <Key>
+      <PropertyRef Name="id_entrada" />
+    </Key>
+    <Property Name="id_entrada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_sistema" Type="int" Nullable="false" />
+    <Property Name="producto" Type="int" Nullable="false" />
+    <Property Name="responsable" Type="int" Nullable="false" />
+    <Property Name="proveedor" Type="int" Nullable="false" />
+    <Property Name="ruta" Type="varchar" MaxLength="45" />
+    <Property Name="conductor" Type="int" Nullable="false" />
+    <Property Name="numero_placa" Type="varchar" MaxLength="45" />
+    <Property Name="consecutivo" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="fecha_hora" Type="datetime" Nullable="false" />
+    <Property Name="caneca" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="galon" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="kg_remisionado" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="kg_planta" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="diferencia" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="producto_malo" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="perdida_peso" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="peso_neto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="informe">
+    <Key>
+      <PropertyRef Name="id_informe" />
+    </Key>
+    <Property Name="id_informe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="usuario_sistema" Type="int" Nullable="false" />
+    <Property Name="conductor" Type="int" Nullable="false" />
+    <Property Name="ruta" Type="varchar" MaxLength="45" />
+    <Property Name="tipo_informe" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fecha_hora" Type="datetime" Nullable="false" />
+    <Property Name="kg_remisionado" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="kg_planta" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="diferencia" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="producto_malo" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="perdida_peso" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="caneca" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="galon" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="peso_bruto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="tara" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="peso_neto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="grados_brix" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="cantidad_bulto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id_persona" />
+    </Key>
+    <Property Name="id_persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tipo_persona" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tipo_documento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="numero_documento" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="75" />
+    <Property Name="telefono" Type="varchar" MaxLength="75" />
+    <Property Name="correo" Type="varchar" MaxLength="75" />
+    <Property Name="nombre_contacto" Type="varchar" MaxLength="75" />
+    <Property Name="telefono_contacto" Type="varchar" MaxLength="75" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="75" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="75" />
+  </EntityType>
+  <EntityType Name="salida">
+    <Key>
+      <PropertyRef Name="id_salida" />
+    </Key>
+    <Property Name="id_salida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_sistema" Type="int" Nullable="false" />
+    <Property Name="producto" Type="int" Nullable="false" />
+    <Property Name="responsable" Type="int" Nullable="false" />
+    <Property Name="cliente" Type="int" Nullable="false" />
+    <Property Name="conductor" Type="int" Nullable="false" />
+    <Property Name="numero_placa" Type="varchar" MaxLength="45" />
+    <Property Name="consecutivo" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="fecha_hora" Type="datetime" Nullable="false" />
+    <Property Name="caneca" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="galon" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="peso_bruto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="tara" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="peso_neto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="grados_brix" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="cantidad_bulto" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tipo_usuario" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tipo_documento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="numero_documento" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="75" />
+    <Property Name="telefono" Type="varchar" MaxLength="75" />
+    <Property Name="correo" Type="varchar" MaxLength="75" />
+    <Property Name="loguin" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="75" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Entrada_Conductor">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="entrada">
+        <PropertyRef Name="conductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entrada_Producto">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="entrada">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entrada_Proveedor">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="entrada">
+        <PropertyRef Name="proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entrada_Responsable">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="entrada">
+        <PropertyRef Name="responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entrada_Usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="entrada" Type="Self.entrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="entrada">
+        <PropertyRef Name="usuario_sistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Informe_Conductor">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="conductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Informe_Usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="informe" Type="Self.informe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="informe">
+        <PropertyRef Name="usuario_sistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salida_Conductor">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="salida" Type="Self.salida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="salida">
+        <PropertyRef Name="conductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salida_Producto">
+    <End Role="producto" Type="Self.producto" Multiplicity="1" />
+    <End Role="salida" Type="Self.salida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="salida">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salida_Proveedor">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="salida" Type="Self.salida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="salida">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salida_Responsable">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="salida" Type="Self.salida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id_persona" />
+      </Principal>
+      <Dependent Role="salida">
+        <PropertyRef Name="responsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salida_Usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="salida" Type="Self.salida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="salida">
+        <PropertyRef Name="usuario_sistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="biowebModelStoreContainer">
+    <EntitySet Name="entrada" EntityType="Self.entrada" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="informe" EntityType="Self.informe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="salida" EntityType="Self.salida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Entrada_Conductor" Association="Self.FK_Entrada_Conductor">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="entrada" EntitySet="entrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entrada_Producto" Association="Self.FK_Entrada_Producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="entrada" EntitySet="entrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entrada_Proveedor" Association="Self.FK_Entrada_Proveedor">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="entrada" EntitySet="entrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entrada_Responsable" Association="Self.FK_Entrada_Responsable">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="entrada" EntitySet="entrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entrada_Usuario" Association="Self.FK_Entrada_Usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="entrada" EntitySet="entrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Informe_Conductor" Association="Self.FK_Informe_Conductor">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Informe_Usuario" Association="Self.FK_Informe_Usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="informe" EntitySet="informe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salida_Conductor" Association="Self.FK_Salida_Conductor">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="salida" EntitySet="salida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salida_Producto" Association="Self.FK_Salida_Producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="salida" EntitySet="salida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salida_Proveedor" Association="Self.FK_Salida_Proveedor">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="salida" EntitySet="salida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salida_Responsable" Association="Self.FK_Salida_Responsable">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="salida" EntitySet="salida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salida_Usuario" Association="Self.FK_Salida_Usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="salida" EntitySet="salida" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

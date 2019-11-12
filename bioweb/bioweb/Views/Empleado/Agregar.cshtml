@@ -1,0 +1,104 @@
+﻿@model bioweb.Models.ViewModels.EmpleadoViewModel
+
+@{
+    ViewBag.Title = "AGREGAR EMPLEADO";
+}
+
+    <div class="container mt-5 mb-5">
+        <h4 class="row justify-content-center align-items-center mb-5 text-dark">@ViewBag.Title</h4>
+        @using (Html.BeginForm("Agregar", "Empleado", FormMethod.Post))
+        {
+            <div class="form-row">
+
+                <!--nombre del empleado-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.nombre)
+                    @Html.TextBoxFor(empleado => empleado.nombre, "", new { @class = "form-control"})
+                    @Html.ValidationMessageFor(empleado => empleado.nombre, "", new { @class = "text-danger" })
+                </div>
+
+                <!--tipo de documento-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.tipoDocumento)
+                    @Html.DropDownList("tipoDocumento", new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "CC", Selected = true},
+                        new SelectListItem {Text = "NA"}
+
+                    }, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(empleado => empleado.tipoDocumento, "", new { @class = "text-danger" })
+                </div>
+
+                <!--numero del documento-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.numeroDocumento)
+                    @Html.TextBoxFor(empleado => empleado.numeroDocumento, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(empleado => empleado.numeroDocumento, "", new { @class = "text-danger" })
+                </div>
+
+                <!--direcci�n del empleado-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.direccion)
+                    @Html.TextBoxFor(empleado => empleado.direccion, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(empleado => empleado.direccion, "", new { @class = "text-danger" })
+                </div>
+
+                <!--telefono-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.telefono)
+                    @Html.TextBoxFor(empleado => empleado.telefono, "", new { @class = "form-control" })
+                </div>
+
+                <!--correo-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.correo)
+                    @Html.TextBoxFor(emplado => emplado.correo, "", new { @class = "form-control" })
+                </div>
+
+                <!--nombre de un contacto-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.nombreContacto)
+                    @Html.TextBoxFor(empleado => empleado.nombreContacto, "", new { @class = "form-control" })
+
+                </div>
+
+                <!--numero de un contacto-->
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(empleado => empleado.telefonoContacto)
+                    @Html.TextBoxFor(empleado => empleado.telefonoContacto, "", new { @class = "form-control" })
+                </div>
+
+                <!--separador-->
+                <div class="form-group col-md-4"></div>
+
+                <!--agregar-->
+                <button type="submit" class="btn btn-primary col-md-2" >AGREGAR <i class="fas fa-user-plus"></i></button>
+                <div class="col-md-3"></div>
+                <!--volver-->
+                <a href="/Empleado/listar" class="btn btn-dark col-md-2">VOLVER <i class="far fa-hand-point-left"></i></a>
+                <div class="col-md-3"></div>
+                <!--limpiar-->
+                <button type="reset" class="btn btn-danger col-md-2">LIMPIAR <i class="fas fa-broom"></i></button>
+            </div>
+
+            if (@ViewBag.confirmacion != null)
+            {
+                if (@ViewBag.confirmacion)
+                {
+                    <script>
+                        confirmacion("Empleado agregado", "/Empleado/agregar");
+                    </script>
+                }
+                else
+                {
+                    <script>
+                        confirmacion("Empleado no agregado", "/Empleado/agregar");
+                    </script>
+                }
+            }
+
+        }
+
+    </div>
+

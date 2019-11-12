@@ -1,0 +1,134 @@
+﻿@model bioweb.Models.ViewModels.UsuarioViewModel
+
+@{
+    ViewBag.Title = "ACTUALIZAR USUARIO";
+}
+
+    <div class="container mt-5 mb-5">
+        <h4 class="row justify-content-center align-items-center mb-5 text-dark">@ViewBag.Title</h4>
+        @using (Html.BeginForm("Actualizar", "Usuario", FormMethod.Post))
+        {
+
+
+    <div class="form-row">
+
+        <!--id usuario-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.idUsuario)
+            @Html.TextBoxFor(usuario => usuario.idUsuario, "", new { @class = "form-control", @readonly = "readonly" })
+            @Html.ValidationMessageFor(usuario => usuario.idUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <!--nombre usuario-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.nombre)
+            @Html.TextBoxFor(usuario => usuario.nombre, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.nombre, "", new { @class = "text-danger" })
+        </div>
+
+        <!--tipo usuario-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.tipoUsuario)
+            @Html.DropDownList("tipoUsuario", new List<SelectListItem>
+            {
+                new SelectListItem {Text = "admin"},
+                new SelectListItem {Text = "user" , Selected = true}
+
+            }, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(usuario => usuario.tipoUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <!--tipo documento-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.tipoDocumento)
+            @Html.DropDownList("tipoDocumento", new List<SelectListItem>
+            {
+                new SelectListItem {Text = "CC", Selected = true},
+                new SelectListItem {Text = "NA"}
+
+            }, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(usuario => usuario.tipoDocumento, "", new { @class = "text-danger" })
+        </div>
+
+        <!--número documento-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.numeroDocumento)
+            @Html.TextBoxFor(usuario => usuario.numeroDocumento, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.numeroDocumento, "", new { @class = "text-danger" })
+        </div>
+
+        <!--dirección-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.direccion)
+            @Html.TextBoxFor(usuario => usuario.direccion, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.direccion, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!--teléfono-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.telefono)
+            @Html.TextBoxFor(usuario => usuario.telefono, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.telefono, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!--correo-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.correo)
+            @Html.TextBoxFor(usuario => usuario.correo, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.correo, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!--loguin-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.loguin)
+            @Html.TextBoxFor(usuario => usuario.loguin, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.loguin, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!--clave-->
+        <div class="form-group col-md-4">
+            @Html.LabelFor(usuario => usuario.clave)
+            @Html.TextBoxFor(usuario => usuario.clave, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(usuario => usuario.clave, "", new { @class = "text-danger" })
+        </div>
+
+
+        <!--actualizar-->
+        <div class="col-md-8"></div>
+        <button type="submit" class="btn btn-primary col-md-2">EDITAR  <i class="fas fa-user-plus"></i></button>
+        <div class="col-md-3"></div>
+        <!--volver-->
+        <a href="/Usuario/Listar" class="btn btn-dark col-md-2">VOLVER <i class="far fa-hand-point-left"></i></a>
+        <div class="col-md-3"></div>
+        <!--DESHACER-->
+        <button type="reset" class="btn btn-danger col-md-2">DESHACER <i class="fas fa-redo-alt"></i></button>
+    </div>
+
+
+            if (@ViewBag.confirmacion != null)
+            {
+                if (@ViewBag.confirmacion)
+                {
+                    <script>
+                        confirmacion("Usuario actualizado", "/Usuario/Listar");
+                    </script>
+
+                }
+                else
+                {
+                    <script>
+                        confirmacion("Usuario no actualizado", "/Usuario/Listar");
+                    </script>
+                }
+
+            }
+
+        }
+    </div>
+
