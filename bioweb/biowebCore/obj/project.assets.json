@@ -6135,11 +6135,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Crispancho\\source\\repos\\Crispancho93\\asp-net\\bioweb\\biowebCore\\biowebCore.csproj",
+      "projectUniqueName": "C:\\Users\\Crispancho\\Documents\\GitHub\\asp-net\\bioweb\\biowebCore\\biowebCore.csproj",
       "projectName": "biowebCore",
-      "projectPath": "C:\\Users\\Crispancho\\source\\repos\\Crispancho93\\asp-net\\bioweb\\biowebCore\\biowebCore.csproj",
+      "projectPath": "C:\\Users\\Crispancho\\Documents\\GitHub\\asp-net\\bioweb\\biowebCore\\biowebCore.csproj",
       "packagesPath": "C:\\Users\\Crispancho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Crispancho\\source\\repos\\Crispancho93\\asp-net\\bioweb\\biowebCore\\obj\\",
+      "outputPath": "C:\\Users\\Crispancho\\Documents\\GitHub\\asp-net\\bioweb\\biowebCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Crispancho\\AppData\\Roaming\\NuGet\\NuGet.Config",
